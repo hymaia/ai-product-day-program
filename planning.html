@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Product Day 2026 — Programme</title>
+  <style>
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-Thin.otf')          format('opentype'); font-weight:100; font-style:normal; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-ThinOblique.otf')   format('opentype'); font-weight:100; font-style:oblique; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-Hairline.otf')      format('opentype'); font-weight:200; font-style:normal; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-Light.otf')         format('opentype'); font-weight:300; font-style:normal; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-LightOblique.otf')  format('opentype'); font-weight:300; font-style:oblique; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-Regular.otf')       format('opentype'); font-weight:400; font-style:normal; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-RegularOblique.otf')format('opentype'); font-weight:400; font-style:oblique; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-Medium.otf')        format('opentype'); font-weight:500; font-style:normal; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-MediumOblique.otf') format('opentype'); font-weight:500; font-style:oblique; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-Bold.otf')          format('opentype'); font-weight:700; font-style:normal; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-BoldOblique.otf')   format('opentype'); font-weight:700; font-style:oblique; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-Black.otf')         format('opentype'); font-weight:900; font-style:normal; }
+    @font-face { font-family:'Halogen'; src:url('halogen_font/Halogen-BlackOblique.otf')  format('opentype'); font-weight:900; font-style:oblique; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #1c1c1c; --surface: #242424; --surface-2: #2e2e2e;
+      --border: rgba(255,255,255,0.1); --text: #ffffff; --muted: #a0a0a0; --dim: #606060;
+      --product-color:#ddff00; --product-bg:rgba(221,255,0,.1);  --product-border:rgba(221,255,0,.3);
+      --pm-color:#2bfdac;     --pm-bg:rgba(43,253,172,.1);      --pm-border:rgba(43,253,172,.3);
+      --scaling-color:#a5a6fe; --scaling-bg:rgba(38,36,251,.18); --scaling-border:rgba(38,36,251,.55);
+      --keynote-color:#fc1258; --keynote-bg:rgba(252,18,88,.1);  --keynote-border:rgba(252,18,88,.35);
+      --workshop-color:#fc1258; --workshop-bg:rgba(252,18,88,.1); --workshop-border:rgba(252,18,88,.3);
+      --ronde-color:#2bfdac;   --ronde-bg:rgba(43,253,172,.1);  --ronde-border:rgba(43,253,172,.3);
+      --break-color:#606060;   --break-bg:rgba(96,96,96,.1);    --break-border:rgba(96,96,96,.22);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Halogen',system-ui,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+
+    /* HEADER */
+    .header { position:relative; overflow:hidden; padding:40px 24px 32px; text-align:center;
+      background:linear-gradient(180deg,#111111 0%,var(--bg) 100%); border-bottom:1px solid var(--border); }
+    .header::before { content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(221,255,0,.07) 0%,transparent 70%); pointer-events:none; }
+    .header-logo { display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+    .header-logo img { height:clamp(36px,5vw,56px); width:auto; max-width:90vw; object-fit:contain; }
+    .header-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(221,255,0,.08);
+      border:1px solid rgba(221,255,0,.3); color:#ddff00; font-size:11px; font-weight:700;
+      letter-spacing:.09em; text-transform:uppercase; padding:5px 14px; border-radius:100px; margin-bottom:16px; }
+    .header-sub { color:var(--muted); font-size:15px; }
+
+    /* LEGEND / FILTERS */
+    .legend-bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center;
+      padding:14px 24px; background:var(--surface); border-bottom:1px solid var(--border);
+      position:sticky; top:0; z-index:50; }
+    .legend-item { display:flex; align-items:center; gap:6px; font-size:11px; font-weight:600;
+      padding:4px 10px; border-radius:100px; border:1px solid; white-space:nowrap;
+      cursor:pointer; user-select:none; transition:opacity .15s, transform .15s, box-shadow .15s; }
+    .legend-item:hover { opacity:.85; }
+    .legend-item .dot { width:7px; height:7px; border-radius:50%; transition:transform .15s; }
+    .legend-item.active { box-shadow:0 0 0 2px currentColor; transform:scale(1.06); }
+    .legend-item.active .dot { transform:scale(1.3); }
+    .legend-item.inactive { opacity:.35; }
+    .li-product  { background:var(--product-bg);  border-color:var(--product-border);  color:var(--product-color); }
+    .li-pm       { background:var(--pm-bg);       border-color:var(--pm-border);       color:var(--pm-color); }
+    .li-scaling  { background:var(--scaling-bg);  border-color:var(--scaling-border);  color:var(--scaling-color); }
+
+    /* Dimmed sessions when a filter is active */
+    .session.dimmed { opacity:.18; pointer-events:none; transform:none !important; }
+    .session-lightning.dimmed { opacity:.18; pointer-events:none; }
+
+    /* SCHEDULE */
+    .schedule-scroll { overflow-x:auto; padding:24px 20px 60px; -webkit-overflow-scrolling:touch; }
+    .schedule { border-collapse:separate; border-spacing:6px; min-width:780px; width:100%; table-layout:fixed; }
+    .th-time { width:58px; min-width:58px; }
+    .th-room { padding:10px 14px; background:var(--surface-2); border:1px solid var(--border);
+      border-radius:10px; text-align:left; vertical-align:middle; }
+    .room-name { font-size:13px; font-weight:700; color:var(--text); }
+    .room-cap  { font-size:11px; color:var(--dim); margin-top:2px; }
+    .td-time { font-size:12px; font-weight:700; color:var(--dim); text-align:right;
+      padding-right:8px; vertical-align:top; padding-top:14px; white-space:nowrap; }
+    .td-time.highlight { color:var(--muted); }
+    .td-empty { background:rgba(255,255,255,.02); border:1px dashed rgba(255,255,255,.06); border-radius:10px; min-height:60px; }
+    .td-plenary { padding:0; }
+    .plenary { border-radius:10px; padding:12px 18px; display:flex; align-items:center; gap:12px; border:1px solid; min-height:48px; }
+    .plenary-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; opacity:.7; }
+    .plenary-title { font-size:14px; font-weight:700; }
+    .plenary-speaker { font-size:12px; opacity:.75; margin-top:2px; }
+    .plenary-sep { font-size:18px; opacity:.2; }
+    .plenary-lunch { justify-content:center; flex-direction:column; text-align:center; padding:18px; gap:4px; }
+    .tr-break .plenary { justify-content:center; }
+    .tr-break .td-time { color:var(--dim); }
+
+    /* Session TD cells: equal height within a row */
+    .schedule tbody td:not(.td-time):not(.td-plenary):not(.td-empty) {
+      vertical-align: top;
+      height: 1px;   /* trick: allows height:100% on .session child */
+      padding: 0;
+    }
+
+    /* SESSION CARD */
+    .session { border-radius:10px; padding:12px 14px; border:1px solid; height:100%;
+      display:flex; flex-direction:column; gap:6px; cursor:pointer;
+      transition:filter .15s, transform .15s, box-shadow .15s; }
+    .session:hover { filter:brightness(1.12); transform:translateY(-2px); box-shadow:0 6px 24px rgba(0,0,0,.4); }
+    .s-top { display:flex; align-items:center; gap:6px; }
+    .s-flag { font-size:14px; line-height:1; }
+    .s-type { font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.06em;
+      padding:2px 7px; border-radius:100px; opacity:.85; border:1px solid currentColor; }
+    .s-time { margin-left:auto; font-size:10px; font-weight:700; opacity:.55;
+      letter-spacing:.02em; color:currentColor; white-space:nowrap; }
+    .sl-flag-title .s-time { margin-left:auto; font-size:10px; font-weight:700;
+      opacity:.55; color:currentColor; white-space:nowrap; }
+    .s-title { font-size:12.5px; font-weight:700; line-height:1.4; flex:1; color:var(--text); }
+    .s-speaker { font-size:11px; color:var(--muted); margin-top:2px; }
+
+    /* LIGHTNING */
+    /* Lightning cells: let table row equalise heights between columns */
+    .tr-lightning td:not(.td-time):not(.td-empty) { padding:0; vertical-align:top; }
+    .tr-lightning .td-empty { min-height:0; }
+    .session-lightning { border-radius:8px; padding:8px 10px; border:1px solid;
+      display:flex; flex-direction:column; gap:4px; cursor:pointer;
+      transition:filter .15s; }
+    .session-lightning:hover { filter:brightness(1.12); }
+    .sl-flag-title { display:flex; align-items:flex-start; gap:5px; }
+    .sl-title { font-size:11.5px; font-weight:700; line-height:1.35; flex:1; color:var(--text); }
+    .sl-speaker { font-size:10px; color:var(--muted); }
+    .tr-lightning .td-time { color:var(--muted); }
+    .lightning-label { font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.06em;
+      color:var(--product-color); margin-bottom:6px; display:flex; align-items:center; gap:5px; }
+
+    /* CATEGORIES */
+    .cat-product  { background:var(--product-bg);  border-color:var(--product-border);  color:var(--product-color); }
+    .cat-pm       { background:var(--pm-bg);       border-color:var(--pm-border);       color:var(--pm-color); }
+    .cat-scaling  { background:var(--scaling-bg);  border-color:var(--scaling-border);  color:var(--scaling-color); }
+    .cat-keynote  { background:var(--keynote-bg);  border-color:var(--keynote-border);  color:var(--keynote-color); }
+    .cat-workshop { background:var(--workshop-bg); border-color:var(--workshop-border); color:var(--workshop-color); }
+    .cat-ronde    { background:var(--ronde-bg);    border-color:var(--ronde-border);    color:var(--ronde-color); }
+    .cat-break    { background:var(--break-bg);    border-color:var(--break-border);    color:var(--break-color); }
+
+    /* ── MODAL ── */
+    .modal-overlay { position:fixed; inset:0; z-index:300;
+      background:rgba(0,0,0,.82); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+      display:flex; align-items:flex-end; justify-content:center;
+      opacity:0; pointer-events:none; transition:opacity .22s ease; }
+    .modal-overlay.open { opacity:1; pointer-events:all; }
+    .modal { background:#1e1e1e; border:1px solid rgba(255,255,255,.12); border-bottom:none;
+      border-radius:20px 20px 0 0; width:100%; max-width:600px;
+      max-height:92vh; display:flex; flex-direction:column;
+      position:relative;
+      transform:translateY(50px); transition:transform .32s cubic-bezier(0.34,1.35,0.64,1); }
+    .modal-overlay.open .modal { transform:translateY(0); }
+    .modal-stripe { height:4px; width:100%; }
+    .modal-topbar { display:flex; align-items:center; justify-content:space-between;
+      padding:12px 16px 4px; }
+    .modal-handle { width:36px; height:4px; background:rgba(255,255,255,.15); border-radius:2px; flex-shrink:0; margin:0 auto; }
+    .modal-close { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);
+      color:var(--muted); width:30px; height:30px; flex-shrink:0;
+      border-radius:50%; font-size:13px; cursor:pointer; display:flex; align-items:center;
+      justify-content:center; transition:background .15s, color .15s; }
+    .modal-close:hover { background:rgba(255,255,255,.18); color:var(--text); }
+    .modal-body { padding:12px 24px 32px; position:relative; overflow-y:auto; flex:1; }
+    .modal-badges { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:14px; }
+    .modal-badge { font-size:11px; font-weight:700; padding:3px 11px; border-radius:100px;
+      border:1px solid; letter-spacing:.03em; }
+    .modal-title { font-size:17px; font-weight:800; line-height:1.38; color:var(--text); margin-bottom:14px; }
+    .modal-desc { font-size:13px; color:var(--muted); line-height:1.6; margin-bottom:16px; }
+    .modal-speaker-block { display:flex; align-items:center; gap:11px; margin-bottom:16px; }
+    .modal-avatar { width:40px; height:40px; border-radius:50%; display:flex; align-items:center;
+      justify-content:center; font-size:13px; font-weight:800; color:#fff; flex-shrink:0; }
+    .modal-speaker-name { font-size:13px; font-weight:700; color:var(--text); }
+    .modal-speaker-name a { color:inherit; text-decoration:none; display:inline-flex; align-items:center; gap:5px; }
+    .modal-speaker-name a:hover { text-decoration:underline; opacity:.85; }
+    .modal-speaker-name a::after { content:'↗'; font-size:10px; opacity:.5; }
+    .modal-speaker-role { font-size:12px; color:var(--muted); margin-top:2px; }
+    .modal-meta { display:flex; flex-wrap:wrap; gap:7px; padding-top:14px; border-top:1px solid var(--border); }
+    .modal-meta-item { display:flex; align-items:center; gap:5px; font-size:12px; color:var(--muted);
+      background:rgba(255,255,255,.05); border:1px solid var(--border); padding:4px 12px; border-radius:100px; }
+
+    @media (min-width:640px) {
+      .modal-overlay { align-items:center; padding:20px; }
+      .modal { border-radius:20px; border-bottom:1px solid rgba(255,255,255,.12); }
+    }
+
+    /* ── MOBILE : 3 colonnes compactes ── */
+    @media (max-width:639px) {
+      .schedule-scroll { padding:12px 2px 40px; }
+
+      /* Table : plus de min-width forcé */
+      .schedule { min-width:0; border-spacing:2px; }
+      .th-time  { width:38px; min-width:38px; }
+
+      /* En-têtes de salle */
+      .th-room  { padding:5px 2px; border-radius:6px; }
+      .room-name { font-size:8px; line-height:1.2; }
+      .room-cap  { display:none; }
+
+      /* Colonne horaire */
+      .td-time  { font-size:8px; padding-right:2px; padding-top:10px; white-space:nowrap; }
+
+      /* Cartes session */
+      .session  { padding:7px 6px; min-height:90px; border-radius:7px; gap:4px; }
+      .s-top    { gap:3px; flex-wrap:wrap; }
+      .s-flag   { font-size:11px; }
+      .s-type   { display:none; }           /* badge type caché sur mobile */
+      .s-time   { display:none; }           /* horaires cachés sur mobile (visibles dans la modale) */
+      .sl-flag-title .s-time { display:none; }
+
+      /* Titre : 3 lignes max + ellipsis */
+      .s-title  {
+        font-size:9px; line-height:1.3;
+        display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+        overflow:hidden;
+      }
+
+      /* Speaker : 1 ligne + ellipsis */
+      .s-speaker {
+        font-size:8px;
+        white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+      }
+
+      /* Lightning talks */
+      .session-lightning { padding:6px 7px; border-radius:6px; }
+      .sl-title  {
+        font-size:8.5px; line-height:1.25;
+        display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+        overflow:hidden;
+      }
+      .sl-speaker { font-size:7.5px; }
+      .lightning-label { font-size:7.5px; }
+
+      /* Plenary / breaks */
+      .plenary { padding:8px 6px; gap:6px; min-height:0; border-radius:7px; }
+      .plenary-title  { font-size:10px; }
+      .plenary-label  { font-size:7px; }
+      .plenary-speaker{ font-size:9px; }
+      .plenary-sep    { display:none; }
+
+      /* Header logo */
+      .header { padding:24px 12px 20px; }
+      .header-logo img { height:clamp(24px,6vw,36px); }
+      .header-sub { font-size:12px; }
+      .header-badge { font-size:9px; padding:4px 10px; }
+
+      /* Legend bar */
+      .legend-bar { gap:5px; padding:10px 12px; }
+      .legend-item { font-size:9px; padding:3px 8px; }
+    }
+
+    /* FOOTER */
+    footer { text-align:center; padding:24px; color:var(--dim); font-size:12px; border-top:1px solid var(--border); }
+    footer a { color:#ddff00; text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-logo">
+    <img src="aiprogram26@4x.png" alt="AI Product Day 2026">
+  </div>
+  <div class="header-badge">📅 Lundi 23 Mars 2026 &nbsp;·&nbsp; Paris</div>
+  <p class="header-sub">Let's shape the future of Product in the age of AI</p>
+</header>
+
+<div class="legend-bar">
+  <div class="legend-item li-product" onclick="toggleFilter('product', this)" data-filter="product"><span class="dot" style="background:var(--product-color)"></span>AI In Product</div>
+  <div class="legend-item li-pm"      onclick="toggleFilter('pm', this)"      data-filter="pm"><span class="dot" style="background:var(--pm-color)"></span>AI for PMs &amp; Designers</div>
+  <div class="legend-item li-scaling" onclick="toggleFilter('scaling', this)" data-filter="scaling"><span class="dot" style="background:var(--scaling-color)"></span>Scaling AI Adoption</div>
+</div>
+
+<div class="schedule-scroll">
+<table class="schedule">
+  <thead>
+    <tr>
+      <th class="th-time"></th>
+      <th class="th-room"><div class="room-name">Salle Adenauer</div><div class="room-cap">500 personnes</div></th>
+      <th class="th-room"><div class="room-name">Salon Honorat</div><div class="room-cap">200 personnes</div></th>
+      <th class="th-room"><div class="room-name">Gulbenkian</div><div class="room-cap">80 personnes</div></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td class="td-time">9:00</td>
+      <td colspan="3" class="td-plenary">
+        <div class="plenary cat-break"><span class="plenary-sep">—</span><div><div class="plenary-title">Intro &amp; Accueil</div></div></div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="td-time">9:30</td>
+      <td colspan="3" class="td-plenary">
+        <div class="plenary cat-keynote">
+          <span class="plenary-label">Keynote d'ouverture</span>
+          <span class="plenary-sep">·</span>
+          <div><div class="plenary-title">À confirmer</div></div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 10:00 -->
+    <tr>
+      <td class="td-time">10:00</td>
+      <td>
+        <div class="session cat-product" onclick="openModal(this)"
+          data-title="Du produit « Powered by AI » au mindset AI-first : 6 semaines pour réinventer PlayPlay"
+          data-speaker="Pauline Marol" data-role="CPTO" data-co="PlayPlay"
+          data-lang="fr" data-time="10:00" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="product"
+          data-desc="3 ans, 15+ features IA ajoutées. Notre produit n&#x27;a jamais été aussi puissant. Et pourtant, face aux expériences AI-first qui émergent dans notre industrie, une évidence s&#x27;impose : &quot;si on devait créer un nouveau produit aujourd&#x27;hui, on ne ferait pas PlayPlay tel qu&#x27;il est.&quot;
+6 semaines pour créer PlayPlay Design. Founder mode. Hors Process. Mindset produit radicalement différent. Je partagerai notre double pari : combiner agilité startup et assets scale-up, puis gérer le retour aux contraintes sans perdre la dynamique."
+          data-linkedin="https://www.linkedin.com/in/paulinemarol/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">Du produit "Powered by AI" au mindset AI-first : 6 semaines pour réinventer PlayPlay</div>
+          <div class="s-speaker">Pauline Marol · PlayPlay</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-pm" onclick="openModal(this)"
+          data-title="Design d'interactions Humains-IA dans la banque de détail"
+          data-speaker="David Serrault" data-role="Design Director" data-co="BPCE"
+          data-lang="fr" data-time="10:00" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="pm"
+          data-desc="Concevoir et déployer des dispositifs agentiques grand public à l&#x27;échelle d&#x27;une banque systémique française. Prendre en considération les caractéristiques inédites d&#x27;une nouvelle matière première."
+          data-linkedin="https://www.linkedin.com/in/davidserrault/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">Design d'interactions Humains-IA dans la banque de détail</div>
+          <div class="s-speaker">David Serrault · BPCE</div>
+        </div>
+      </td>
+      <td class="td-empty"></td>
+    </tr>
+
+    <!-- 10:30 -->
+    <tr>
+      <td class="td-time">10:30</td>
+      <td>
+        <div class="session cat-scaling" onclick="openModal(this)"
+          data-title="You build it, you live it : vivre l'IA pour mieux la construire"
+          data-speaker="Audrey Hacq &amp; Lya Akgun" data-role="Senior Product Design Manager &amp; Product Designer GenAI" data-co="Pennylane"
+          data-lang="fr" data-time="10:30" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="scaling"
+          data-desc="Chez Pennylane, nous faisons en sorte que l’IA soit tout autant une affaire de culture que d’objectif business. Plutôt que de voir l’IA comme un bloc à ajouter dans la conception du produit, nous l&#x27;avons intégrée au cœur même de notre façon de travailler. Notre objectif est de partager notre expérience ainsi que nos challenges autour de cette « boucle vertueuse » : une “alimentation” continue entre notre usage interne de l’IA et la conception de nos fonctionnalités produit basées sur l’IA.
+Nous avons découvert que ces deux mondes ne font pas que coexister, ils se nourrissent mutuellement :
+-&gt; De la conception à l&#x27;usage : mettre les mains dans le moteur pour développer nos propres fonctionnalités IA nous permet de mieux comprendre sa mécanique. Ce bagage technique fait de nous des utilisateurs internes plus avertis et plus intentionnels.
+-&gt; De l&#x27;usage à la conception : en comptant sur l’IA dans notre quotidien, nous vivons en direct les expériences utilisateurs que nous essayons de construire, qu’ils s’agissent des “aha moments”, des frictions... Cette empathie guide aujourd’hui nos choix pour créer des expériences plus pertinentes et plus humaines."
+          data-linkedin="https://www.linkedin.com/in/audrey-hacq-4440652a/|https://www.linkedin.com/in/lyaakgun/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">You build it, you live it : vivre l'IA pour mieux la construire</div>
+          <div class="s-speaker">Audrey Hacq &amp; Lya Akgun · Pennylane</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-product" onclick="openModal(this)"
+          data-title="If AI answers instead of search results, who controls brand &amp; product perception?"
+          data-speaker="Dounia Zouine" data-role="" data-co="Blue449"
+          data-lang="en" data-time="10:30" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="product"
+          data-desc="Lorsque l'IA remplace les résultats de recherche, qui contrôle vraiment la perception de votre marque et de votre produit ? Une réflexion stratégique sur le nouveau terrain de jeu de la visibilité produit."
+          data-linkedin="https://www.linkedin.com/in/douniazouine/">
+          <div class="s-top"><span class="s-flag">🇺🇸</span></div>
+          <div class="s-title">If AI answers instead of search results, who controls brand &amp; product perception?</div>
+          <div class="s-speaker">Dounia Zouine · Blue449</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-pm" onclick="openModal(this)"
+          data-title="The Product Ops playbook to scale product feedback with AI"
+          data-speaker="Estelle David" data-role="Senior Product Operations Manager" data-co="Gorgias"
+          data-lang="fr" data-time="10:30" data-room="Gulbenkian" data-format="Long Talk · 25 min" data-cat="pm"
+          data-desc="Feedback isn’t a tooling problem—it’s a culture problem. In this talk, I’ll share a culture-first Product Ops approach to make feedback truly actionable: what teams do (and don’t do) to turn raw input into clarity, alignment, and momentum across Product and GTM. Lessons from what I built at Contentsquare, and how we’re now scaling it at Gorgias with AI (tagging, clustering, summaries, retrieval). I’m genuinely passionate about this—no magic recipe, just concrete practices you can pick up, adapt, and make your own."
+          data-linkedin="https://www.linkedin.com/in/estelle-david/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">The Product Ops playbook to scale product feedback with AI</div>
+          <div class="s-speaker">Estelle David · Gorgias</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 11:00 Break -->
+    <tr class="tr-break">
+      <td class="td-time">11:00</td>
+      <td colspan="3" class="td-plenary">
+        <div class="plenary cat-break" style="padding:10px 18px;">
+          <span class="plenary-sep">☕</span><div class="plenary-title">Pause</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 11:30 -->
+    <tr>
+      <td class="td-time">11:30</td>
+      <td>
+        <div class="session cat-product" onclick="openModal(this)"
+          data-title="Talk à confirmer"
+          data-speaker="Martin Berthonneau" data-role="" data-co="Leboncoin"
+          data-lang="fr" data-time="11:30" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="product"
+          data-desc="Titre et description à confirmer."
+          data-linkedin="https://www.linkedin.com/in/berthonneau/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">Talk à confirmer</div>
+          <div class="s-speaker">Martin Berthonneau · Leboncoin</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-pm" onclick="openModal(this)"
+          data-title="Evals: the foundation of reliable AI products"
+          data-speaker="Calliste Duru" data-role="Founding Product" data-co="Basalt AI"
+          data-lang="fr" data-time="11:30" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="pm"
+          data-desc="When building AI features, you can’t anticipate everything upfront. Real user interactions expose unexpected inputs and failures that only appear in production, leaving teams guessing what to fix and whether their changes actually improve the product.
+In this talk, we’ll explore why datasets and evals have become the foundation of AI product development. You’ll learn how leading teams use evals to identify failures, guide their roadmap, prevent regressions, and build fast feedback loops.
+This shift changes how products are built, from static specifications to continuous improvement. Because in the age of AI, the teams that win are those with the fastest learning loops."
+          data-linkedin="https://www.linkedin.com/in/callisteduru/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">Evals: the foundation of reliable AI products</div>
+          <div class="s-speaker">Calliste Duru · Basalt AI</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-workshop" onclick="openModal(this)"
+          data-title="Atelier Hymaia"
+          data-speaker="Hymaia" data-role="" data-co="Hymaia"
+          data-lang="fr" data-time="11:30" data-room="Gulbenkian" data-format="Atelier" data-cat="workshop"
+          data-desc="Atelier organisé par Hymaia. Détails à confirmer.">
+          <div class="s-top"><span class="s-flag">🇫🇷</span><span class="s-type">Atelier</span></div>
+          <div class="s-title">Atelier Hymaia</div>
+          <div class="s-speaker">Hymaia</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 12:00 -->
+    <tr>
+      <td class="td-time">12:00</td>
+      <td>
+        <div class="session cat-scaling" onclick="openModal(this)"
+          data-title="From blank pages to power users: building an AI-fluent culture"
+          data-speaker="Julie Robles" data-role="Product &amp; AI Operations Lead" data-co="PayFit"
+          data-lang="en" data-time="12:00" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="scaling"
+          data-desc="You rolled out AI tools. Some people love them, some ignore them, and you&#x27;re drowning in support requests. Sound familiar?
+Here&#x27;s what nobody tells you: organizations don&#x27;t adopt AI, they evolve through it. And each phase needs a completely different playbook.
+In this talk, I&#x27;ll share the framework we built navigating three distinct phases, from Ignition through Acceleration to Orchestration, while growing our people."
+          data-linkedin="https://www.linkedin.com/in/roblesjulie/">
+          <div class="s-top"><span class="s-flag">🇺🇸</span></div>
+          <div class="s-title">From blank pages to power users: building an AI-fluent culture</div>
+          <div class="s-speaker">Julie Robles · PayFit</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-product" onclick="openModal(this)"
+          data-title="IA conversationnelle : comment donner envie aux utilisateurs de discuter avec notre produit ?"
+          data-speaker="Nelly Seiglan" data-role="Lead Product Designer" data-co="Hexa"
+          data-lang="fr" data-time="12:00" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="product"
+          data-desc="L’IA conversationnelle transforme la manière dont les gens interagissent avec nos produits. C’est le fameux basculement du “browsing” vers le “asking” : les utilisateurs ne naviguent plus, ils formulent une intention et attendent une réponse immédiate et contextualisée (en chat, en vocal ou même en vidéo).
+Dans ce nouveau paradigme, comment créer un produit qui donne vraiment envie de parler ? Et comment rendre cette conversation utile et engageante ?
+Je partagerai deux cas concrets de produits AI-native que j’ai designés en tant que Founding Designer chez Hexa, le startup studio à l’origine de 50 startups dont Aircall, Spendesk et Front :
+Rose, un agent marketing pour les sites B2B où l’enjeu était de dépasser l’image du “chat support inutile” pour créer une vraie valeur business et une interaction qui engage et qui convertit.
+Verso, un agent d’interview en audio/vidéo où l’enjeu était d’instaurer suffisamment de confiance et de fluidité pour obtenir des insights qualitatifs… avec une IA en face.
+Pour chacun, je détaillerai les choix design que nous avons faits au fil des itérations, et comment ces micro-interactions ont directement amélioré l’engagement et la qualité des échanges : animation, questions de relance, reformulations...
+La démarche est volontairement axée sur la pratique, illustrée d’exemples réels et de résultats terrain. Le talk s’adresse principalement aux designers et aux PM qui veulent comprendre comment concevoir des interactions conversationnelles IA plus engageantes. C’est un tournant majeur dans notre manière de penser le design d’interaction."
+          data-linkedin="https://www.linkedin.com/in/nelly-seiglan/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">IA conversationnelle : comment donner envie aux utilisateurs de discuter avec notre produit ?</div>
+          <div class="s-speaker">Nelly Seiglan · Hexa</div>
+        </div>
+      </td>
+      <td class="td-empty"></td>
+    </tr>
+
+    <!-- 12:30 -->
+    <tr>
+      <td class="td-time">12:30</td>
+      <td>
+        <div class="session cat-product" onclick="openModal(this)"
+          data-title="Unifying AI design to accelerate feature delivery at Criteo"
+          data-speaker="Alice Bel, Ana Perlstein, Anne-Sophie Guillou, Camille Lannel-Lamotte" data-role="Senior Product Designer, Content Designer, UX Researcher, Design System Designer" data-co="Criteo"
+          data-lang="en" data-time="12:30" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="product"
+          data-desc="AI has changed product building far more than it has changed engineering.
+A single founder can now design, prototype, validate, ship, and iterate at a pace that used to require full teams.
+This talk explains how to build modern products when you’re one person operating in an AI-native environment.
+Key insights:
+- Why the AI era changes the structure of product work, not just the tooling
+How to run the entire product loop solo: discovery, research, prototyping, delivery, iteration
+- How to use agents, automation, and lightweight infra to replace traditional team overhead
+- How to move from feature shipping to system-building with AI-powered services
+In short, this talk shows how the modern AI product stack lets a single founder compete with traditional teams.">
+          <div class="s-top"><span class="s-flag">🇺🇸</span></div>
+          <div class="s-title">Unifying AI design to accelerate feature delivery at Criteo</div>
+          <div class="s-speaker">Alice Bel, Ana Perlstein &amp; al. · Criteo</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-product" onclick="openModal(this)"
+          data-title="Non-deterministic outputs, predictable quality: How to set up your agent for success"
+          data-speaker="Alice Mouton" data-role="Senior Content Designer" data-co="Malt Community"
+          data-lang="en" data-time="12:30" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="product"
+          data-desc="We are witnessing a fundamental shift in how users interact with digital products. Static interfaces are giving way to dynamic, conversation-based experiences that mimic human dialogue. Most product teams already build AI agents. The challenge is no longer how to create an agent, but how to make it feel like a coherent, reliable product surface.
+In this 25-minute talk, I&#x27;ll share a practical framework to set up AI conversational agents for success, whether they are internal tools or end-user facing products. Drawing from UX writing, linguistics, and content operations, I&#x27;ll show how teams can design, govern, and assess conversational AI in a way that is scalable, measurable, and aligned with product goals.
+We&#x27;ll explore why some AI interactions feel natural and trustworthy while others feel confusing or frustrating, connecting linguistic principles (Grice&#x27;s maxims, pragmatics, Jakobson&#x27;s functions) to concrete design decisions. Then, I&#x27;ll walk through a two-part methodology: first, how to prepare your conversational agent (documentation, identity, principles, and prompt design); second, how to assess output quality through both quantitative and qualitative approaches.
+Poorly designed conversations increase cognitive load, break trust, and create hidden costs through rework, escalations, and user frustration. Well-designed conversational AI, on the other hand, improves efficiency, adoption, and long-term product value. This talk gives product designers and PMs the tools to achieve the latter."
+          data-linkedin="https://www.linkedin.com/in/alicemouton/">
+          <div class="s-top"><span class="s-flag">🇺🇸</span></div>
+          <div class="s-title">Non-deterministic outputs, predictable quality: How to set up your agent for success</div>
+          <div class="s-speaker">Alice Mouton · Malt Community</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-ronde" onclick="openModal(this)"
+          data-title="Table Ronde #1 — RH"
+          data-speaker="" data-role="" data-co=""
+          data-lang="" data-time="12:30" data-room="Gulbenkian" data-format="Table Ronde" data-cat="ronde"
+          data-desc="Table ronde dédiée aux enjeux RH dans la transformation AI des organisations.">
+          <div class="s-top"><span class="s-type">Table Ronde</span></div>
+          <div class="s-title">Table Ronde #1 — RH</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 13:00 Lunch -->
+    <tr>
+      <td class="td-time">13:00</td>
+      <td colspan="3" class="td-plenary">
+        <div class="plenary cat-break plenary-lunch">
+          <div class="plenary-label">🍽 Déjeuner &amp; Networking</div>
+          <div class="plenary-title" style="font-size:13px;color:var(--muted)">13:00 – 13:45</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 13:45 Lightning Talks -->
+    <tr class="tr-lightning">
+      <td class="td-time highlight">⚡ 13:45</td>
+      <td>
+        <div class="lightning-label">⚡ Lightning Talks · 5 min</div>
+        <div class="session-lightning cat-pm" onclick="openModal(this)"
+          data-title="De l’idée au MVP en 5 minutes avec Google"
+          data-speaker="Alexandra Tressol" data-role="Head of Digital Native &amp; Startup Customer Engineer" data-co="Google Cloud"
+          data-lang="fr" data-time="13:45" data-room="Salle Adenauer" data-format="Lightning Talk · 5 min" data-cat="pm"
+          data-desc="A 100% hands-on session. We’re stripping away the concepts to focus purely on execution. I’ll prove that with Google, 5 minutes is all it takes to bring an idea to life. Come for the tech, stay for the results."
+          data-linkedin="https://www.linkedin.com/in/alexandra-tressol-3677b920/">
+          <div class="sl-flag-title"><span class="s-flag">🇫🇷</span><div class="sl-title">De l’idée au MVP en 5 minutes avec Google</div></div>
+          <div class="sl-speaker">Alexandra Tressol · Google Cloud</div>
+        </div>
+      </td>
+      <td>
+        <div class="lightning-label">⚡ Lightning Talks · 5 min</div>
+        <div class="session-lightning cat-scaling" onclick="openModal(this)"
+          data-title="Your database doesn’t speak AI (yet)"
+          data-speaker="Taha Le Bras" data-role="Lead Data Engineer" data-co="Supabase"
+          data-lang="en" data-time="13:45" data-room="Salon Honorat" data-format="Lightning Talk · 5 min" data-cat="scaling"
+          data-desc="AI coding agents can generate code fast, but most have no idea how your database actually works. They guess column names, ignore security policies, and write SQL that breaks in production. Supabase ships two open-source tools to close that gap: the MCP Server, which gives agents direct access to your Postgres database, and Agent Skills, which teach them to write correct, secure, performant SQL. In this live demo, I&#x27;ll build a working app from a blank project using only Claude Code, plain English, and these two tools."
+          data-linkedin="https://www.linkedin.com/in/tahabk/">
+          <div class="sl-flag-title"><span class="s-flag">🇺🇸</span><div class="sl-title">Your database doesn’t speak AI (yet)</div></div>
+          <div class="sl-speaker">Taha Le Bras · Supabase</div>
+        </div>
+      </td>
+      <td class="td-empty"></td>
+    </tr>
+
+    <!-- 13:55 Lightning Talks -->
+    <tr class="tr-lightning">
+      <td class="td-time highlight">13:55</td>
+      <td>
+        <div class="session-lightning cat-pm" onclick="openModal(this)"
+          data-title="From hacks to habits: scaling AI in LumApps Product &amp; Engineering org"
+          data-speaker="Myriam Breton" data-role="Chief of Staff to the CPTO" data-co="LumApps"
+          data-lang="en" data-time="13:55" data-room="Salle Adenauer" data-format="Lightning Talk · 5 min" data-cat="pm"
+          data-desc="What does it actually take to build an &quot;AI-Native&quot; organization and move beyond individual experiments? In this rapid 5-minute pitch, you will dive into LumApps AI Productivity Program, an initiative designed to encourage daily AI usage while establishing clear governance across the Product Development Lifecycle (PDLC)."
+          data-linkedin="https://www.linkedin.com/in/myriam-breton/">
+          <div class="sl-flag-title"><span class="s-flag">🇺🇸</span><div class="sl-title">From hacks to habits: scaling AI in LumApps Product &amp; Engineering</div></div>
+          <div class="sl-speaker">Myriam Breton · LumApps</div>
+        </div>
+      </td>
+      <td>
+        <div class="session-lightning cat-pm" onclick="openModal(this)"
+          data-title="2026: the year of measurable impact for AI Experiences"
+          data-speaker="Simon Robic" data-role="" data-co="Screeb"
+          data-lang="en" data-time="13:55" data-room="Salon Honorat" data-format="Lightning Talk · 5 min" data-cat="pm"
+          data-desc="AI is quickly becoming the heart of modern products. But adding AI features is not the hard part, identifying what to prioritize, how to promote those new experiences and how to precisely measure their quality is the new challenge for product teams in 2026. In 5 minutes, Simon Robic shares how product teams can finally have a measurable impact with their AI experiences."
+          data-linkedin="https://www.linkedin.com/in/simonrobic/">
+          <div class="sl-flag-title"><span class="s-flag">🇺🇸</span><div class="sl-title">2026: the year of measurable impact for AI Experiences</div></div>
+          <div class="sl-speaker">Simon Robic · Screeb</div>
+        </div>
+      </td>
+      <td class="td-empty"></td>
+    </tr>
+
+    <!-- 14:00 -->
+    <tr>
+      <td class="td-time">14:00</td>
+      <td>
+        <div class="session cat-product" onclick="openModal(this)"
+          data-title="The Agentic Commerce Stack"
+          data-speaker="Fanny Guélin" data-role="Senior Product Manager Agentic Commerce" data-co="Mirakl"
+          data-lang="en" data-time="14:00" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="product"
+          data-desc="AI agents are reshaping how people discover and buy products, moving ecommerce beyond websites and search into a world where conversations, autonomous agents, and vertical shopping models become the primary interface. As agents take over discovery, comparison, and checkout, the foundations of e-commerce are being rewritten.
+This talk explores why agents outperform traditional ecommerce UX, how product discovery is shifting from pages to semantic entities, and why structured, enriched product data is becoming the core interface for commerce. We will break down the emerging Agentic Commerce Stack, from catalog foundations and GEO metadata to agent-facing APIs and checkout orchestration, and outline concrete strategies for preparing catalogs and commerce infrastructures for agent-driven discovery and transactions across multiple AI ecosystems."
+          data-linkedin="https://www.linkedin.com/in/fannyguelin/">
+          <div class="s-top"><span class="s-flag">🇺🇸</span></div>
+          <div class="s-title">The Agentic Commerce Stack</div>
+          <div class="s-speaker">Fanny Guélin · Mirakl</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-pm" onclick="openModal(this)"
+          data-title="Assess PM AI maturity and prioritize AI initiatives"
+          data-speaker="Thomas Orthgiess &amp; David Piry" data-role="CPO &amp; Deputy CPO" data-co="La Centrale"
+          data-lang="en" data-time="14:00" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="pm"
+          data-desc="Many product teams are still in an early, largely ad-hoc phase of AI adoption. Individual PMs may rely on generic chatbots for occasional tasks, but this often remains fragmented and limited in impact. At La Centrale, we took a step back to consider whether meaningful change requires more than simply providing access to AI tools, and whether it calls for a deeper evolution of the Product Management operating model.
+It’s easy to fall into what we call the “chatbot trap”: using AI mainly for isolated, low-value activities such as summarization, without a shared vision or clear strategy. This raised a simple but important question for us: how can we move from merely using AI to thoughtfully augmenting the Product Management operating system?
+In this session, we will share our initial attempts to assess how our teams work today and where AI can realistically support them. We will introduce a set of “AI superpowers” mapped to the product management journey, with the aim of shifting the focus from basic text generation toward more meaningful support.
+We will also present the prioritization framework we are experimenting with at La Centrale, designed not to chase every new tool, but to focus attention on the use cases where AI can generate meaningful impact.
+Finally, we will reflect on an emerging idea around the “Builder PM,” and consider how Product Managers might be better supported in prototyping and engaging more directly with technical execution."
+          data-linkedin="https://www.linkedin.com/in/thomas-orthgiess/|https://www.linkedin.com/in/d-piry/">
+          <div class="s-top"><span class="s-flag">🇺🇸</span></div>
+          <div class="s-title">Assess PM AI maturity and prioritize AI initiatives</div>
+          <div class="s-speaker">Thomas Orthgiess &amp; David Piry · La Centrale</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-ronde" onclick="openModal(this)"
+          data-title="Table Ronde #2 — AI In Product"
+          data-speaker="" data-role="" data-co=""
+          data-lang="" data-time="14:00" data-room="Gulbenkian" data-format="Table Ronde" data-cat="ronde"
+          data-desc="Table ronde sur les enjeux et retours d'expérience autour de l'IA dans les produits.">
+          <div class="s-top"><span class="s-type">Table Ronde</span></div>
+          <div class="s-title">Table Ronde #2 — AI In Product</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 14:30 -->
+    <tr>
+      <td class="td-time">14:30</td>
+      <td>
+        <div class="session cat-product" onclick="openModal(this)"
+          data-title="Construire un produit d'IA fiable : l'exemple de Vedder, la plateforme Text-to-Insights de Spotify"
+          data-speaker="Guillaume Perchais" data-role="Senior Product Manager" data-co="Spotify"
+          data-lang="fr" data-time="14:30" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="product"
+          data-desc="Chez Spotify, nous avons lancé Vedder, un outil interne qui transforme les questions en langage naturel en requêtes SQL fiables (text-to-SQL), utilisées chaque jour par les équipes data. Ce projet est né d’un besoin simple : rendre la donnée accessible à tous, de manière fiable et avec une réelle garantie de qualité des réponses.
+Le text-to-SQL est un sujet bien connu, mais le maîtriser à l’échelle de toutes les données d’une entreprise est un défi considérable. Expliquer comment nous avons construit Vedder, c’est raconter comment on construit un produit d’IA fondé sur des modèles de langage (LLMs).
+Dans ce talk, je partagerai l’expérience d’un PM sur un produit IA et quelques messages clés :
+• Commencer petit, apprendre, puis scaler : comment nous avons transformé une expérimentation en produit adopté à grande échelle.
+• Ajouter de la certitude dans les LLMs : la mise en place d’évaluations continues pour fiabiliser les résultats.
+• Impliquer les utilisateurs dans l’apprentissage : la curation collaborative de données par les experts métier.
+• Mesurer le ROI d’un produit IA : gains de productivité, nouveaux types d’utilisateurs et adoption organisationnelle.
+Enfin, j’aborderai les évolutions possibles et comment s’y projeter :
+• Les perspectives du context retrieval et la connexion avec le savoir collectif de l’entreprise pour passer du text-to-SQL au text-to-insights.
+• Et la question stratégique : comment ces produits d’IA internes peuvent se différencier durablement face aux grands fournisseurs de LLMs comme OpenAI ou Anthropic."
+          data-linkedin="https://www.linkedin.com/in/guillaumeperchais/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">Construire un produit d'IA fiable : l'exemple de Vedder, la plateforme Text-to-Insights de Spotify</div>
+          <div class="s-speaker">Guillaume Perchais · Spotify</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-pm" onclick="openModal(this)"
+          data-title="AI Made Building Faster. Now What?"
+          data-speaker="Martin Felcman" data-role="VP Product &amp; Design" data-co="ProductBoard"
+          data-lang="en" data-time="14:30" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="pm"
+          data-desc="In an era where building software is cheaper and faster than ever, AI brings the biggest boost yet. But speed doesn’t solve the hardest problem in product: understanding the market and customers deeply enough to build the right thing. In this session, product leaders will explore how to avoid feature bloat and low adoption by sharpening the most important capability: deciding what to build and for whom.
+You’ll walk away with practical strategies you can start using immediately, including approaches to prioritize features that truly matter, techniques for validating customer needs before building, and ways to strengthen human judgment in an AI-driven world. If you’re ready to turn effortless execution into real product impact, this talk will show you how."
+          data-linkedin="https://www.linkedin.com/in/martinfelcman/">
+          <div class="s-top"><span class="s-flag">🇺🇸</span></div>
+          <div class="s-title">AI Made Building Faster. Now What?</div>
+          <div class="s-speaker">Martin Felcman · ProductBoard</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-workshop" onclick="openModal(this)"
+          data-title="Développer ses idées grâce à ses insights : co-construire avec Lovable"
+          data-speaker="Marion Jachimski, Julie Robles, Nicola Carli" data-role="Senior PM · Product &amp; AI Ops Lead" data-co="Seqino · PayFit"
+          data-lang="fr" data-time="14:30" data-room="Gulbenkian" data-format="Atelier · 45 min" data-cat="workshop"
+          data-desc="Comment transformer des feedbacks utilisateurs en prototype grâce à l’IA ?
+Dans cet atelier hands-on, vous utiliserez un LLM pour catégoriser des verbatims, identifier des pains clés et challenger les outputs.
+Puis vous développerez une première idée produit en la prototypant avec Lovable.">
+          <div class="s-top"><span class="s-flag">🇫🇷</span><span class="s-type">Atelier</span></div>
+          <div class="s-title">Développer ses idées grâce à ses insights : co-construire avec Lovable</div>
+          <div class="s-speaker">Marion Jachimski, Julie Robles, Nicola Carli</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 15:00 -->
+    <tr>
+      <td class="td-time">15:00</td>
+      <td>
+        <div class="session cat-product" onclick="openModal(this)"
+          data-title="5 tactiques de discovery pour expérimenter plus vite grâce à l'IA"
+          data-speaker="Thomas Thieffry" data-role="CPO" data-co="BPI France"
+          data-lang="fr" data-time="15:00" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="product"
+          data-desc="L’IA rebat les cartes du product management : elle change la manière dont nous priorisons, dont nous opérons, et dont nous concevons nos produits. Les frontières entre Product Manager, Designer et Engineer s’estompent au profit de profils capables d’expérimenter vite, tous les jours. Dans ce nouveau paradigme, la coordination ne suffit plus : il faut des builders dotés de solides muscles de recherche, de stratégie et de go-to-market.
+Bpifrance partage les tactiques de discovery qui renforcent la confiance dans ses paris IA — et permettent d’investir au bon endroit, au bon moment."
+          data-linkedin="https://www.linkedin.com/in/tthieffry/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">5 tactiques de discovery pour expérimenter plus vite grâce à l'IA</div>
+          <div class="s-speaker">Thomas Thieffry · BPI France</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-scaling" onclick="openModal(this)"
+          data-title="Gouverner une plateforme d'agents : prompts, outils, risques et responsabilités"
+          data-speaker="Noemie Sayada" data-role="Lead Agentic AI Solutions" data-co="Veolia"
+          data-lang="fr" data-time="15:00" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="scaling"
+          data-desc="Quand une organisation commence à multiplier les use cases d’agents IA, la question n’est plus seulement technique : c’est un sujet de gouvernance. Qui crée les agents ? Qui valide les prompts ? Comment éviter la dérive des usages, les effets boîte noire et les risques de sécurité ? Je partagerai notre approche de gouvernance d’une plateforme agentique interne : modèles de responsabilité, workflows de validation, gestion de la qualité et du risque. »
+Points clés :
+- Modèle de responsabilité : qui est propriétaire de quoi (plateforme, agents, données, risques opérationnels).
+- Gouvernance des prompts et des outils (tooling) : nomenclature, versionning, revue, dépréciation.
+- Mécanismes de contrôle : garde-fous, limites d’usage, monitoring.
+- Comment intégrer les fonctions risques/compliance dans la boucle sans bloquer l’innovation.
+- Exemples d’incidents ou quasi-incidents qui ont conduit à faire évoluer la gouvernance."
+          data-linkedin="https://www.linkedin.com/in/noemie-sadoun-2a8641b0/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">Gouverner une plateforme d'agents : prompts, outils, risques et responsabilités</div>
+          <div class="s-speaker">Noemie Sayada · Veolia</div>
+        </div>
+      </td>
+      <td class="td-empty"></td>
+    </tr>
+
+    <!-- 15:30 Break -->
+    <tr class="tr-break">
+      <td class="td-time">15:30</td>
+      <td colspan="3" class="td-plenary">
+        <div class="plenary cat-break" style="padding:10px 18px;">
+          <span class="plenary-sep">☕</span><div class="plenary-title">Pause</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 16:00 -->
+    <tr>
+      <td class="td-time">16:00</td>
+      <td>
+        <div class="session cat-pm" onclick="openModal(this)"
+          data-title="Au-delà de l'exploration : Structurer l'IA pour un augmented Design Process"
+          data-speaker="Caroline Caltagirone" data-role="Lead AI Design Ops &amp; Design Manager" data-co="Malt"
+          data-lang="fr" data-time="16:00" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="pm"
+          data-desc="L’IA peut booster chaque étape de notre workflow. Chez Malt, nous avons plongé dans cette effervescence avec enthousiasme. Mais nous avons vite réalisé que l’abondance de solutions créait un nouveau défi : la dispersion. On retombe dans le piège classique : s’attacher à une solution - des solutions multiples - avant de définir clairement le problème à résoudre et prioriser selon l’impact.
+Dans ce talk, je vous partage comment nous avons transformé cette phase d’expérimentation en une exploration organisée. Nous avons appliqué nos propres méthodes de discovery à notre équipe Design. En cartographiant notre Designer Journey, nous avons identifié les vrais points de friction pour délivrer des solutions à haute valeur ajoutée : transformer 500 interviews utilisateurs en insights actionnables, exploiter la mine d’or des calls Sales ou encore permettre aux designers d’intervenir directement dans la codebase pour accélérer la QA.
+Découvrez notre approche pour passer d’un paradigme “tool-first” à “value-first”."
+          data-linkedin="https://www.linkedin.com/in/caroline-caltagirone/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">Au-delà de l'exploration : Structurer l'IA pour un augmented Design Process</div>
+          <div class="s-speaker">Caroline Caltagirone · Malt</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-pm" onclick="openModal(this)"
+          data-title="De l'idée au produit testable en un week-end grâce au vibe coding"
+          data-speaker="Terry Michel" data-role="Founder &amp; Podcast Host" data-co="Just A Click"
+          data-lang="fr" data-time="16:00" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="pm"
+          data-desc="A 100% hands-on session. We’re stripping away the concepts to focus purely on execution. I’ll prove that with Google, 5 minutes is all it takes to bring an idea to life. Come for the tech, stay for the results."
+          data-linkedin="https://www.linkedin.com/in/terry-michel/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">De l'idée au produit testable en un week-end grâce au vibe coding</div>
+          <div class="s-speaker">Terry Michel · Just A Click</div>
+        </div>
+      </td>
+      <td class="td-empty"></td>
+    </tr>
+
+    <!-- 16:30 -->
+    <tr>
+      <td class="td-time">16:30</td>
+      <td>
+        <div class="session cat-scaling" onclick="openModal(this)"
+          data-title="De Python à Profit : La vérité cachée sur la mise à l'échelle de l'AI"
+          data-speaker="Anne-Sophie Lavelle" data-role="Head of Product" data-co="Back Market"
+          data-lang="fr" data-time="16:30" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="scaling"
+          data-desc="Dans cette conférence, Anne-Sophie partagera le parcours de Back Market sur 5 ans pour développer ses AI capabilities—d&#x27;un simple supply optimization algorithm à plus de 10 production use cases couvrant la supply, la finance et le customer care. Elle révélera les décisions stratégiques derrière leur succès : concevoir chaque fonctionnalité AI avec une obsession pour l&#x27;impact business, naviguer dans les build-versus-buy decisions, choisir entre les rule-based approaches, la genAI et le classical Machine Learning, et avoir la discipline de mettre fin aux projets sous-performants. Vous apprendrez comment leur organisation a évolué d&#x27;un AI squad à trois, et découvrirez leur incubation model pour valider l&#x27;impact avant de scaler. Vous apprendrez également comment Back Market a permis aux équipes non-AI de créer des AI POCs de manière autonome—créant un cercle vertueux où les squads valident l&#x27;impact indépendamment avant de passer à la full production. Un blueprint pratique pour scaler l&#x27;AI avec rigueur et autonomie."
+          data-linkedin="https://www.linkedin.com/in/anne-sophie-lavelle-1a94b480/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">De Python à Profit : La vérité cachée sur la mise à l'échelle de l'AI</div>
+          <div class="s-speaker">Anne-Sophie Lavelle · Back Market</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-scaling" onclick="openModal(this)"
+          data-title="Customer Service AI Ecosystem: Orchestrating Assistants for End-Users and CS Agents Alike"
+          data-speaker="Gaëtan Beaurepère &amp; Alexandre Pineau" data-role="Lead CS Ops &amp; AI Operations" data-co="PayFit"
+          data-lang="en" data-time="16:30" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="scaling"
+          data-desc="At PayFit, we&#x27;ve moved beyond single-purpose AI tools to create an intelligent ecosystem where specialized AI assistants work in concert to solve complex HR and payroll challenges—serving our customers, their employees, AND our customer service agents.
+Our Two-Pillar AI Strategy
+1 - PayFit Copilot: 24/7 Autonomous Support for customers
+Available around the clock, PayFit Copilot empowers users to run their payroll autonomously.
+Key Use Case: Enabling customers and their employees to independently navigate and complete payroll processes—from routine declarations to complex multi-jurisdictional scenarios—without waiting for support.
+2 - CS AI Assistants Ecosystem: Orchestrated Intelligence for Agents
+Our orchestration layer coordinates specialized AI agents to supercharge CS team effectiveness
+Key Use Case: Transforming CS agents from ticket responders into strategic problem-solvers, equipped with AI that handles complexity so they can focus on empathy and judgment.
+Our 2026 Vision: We&#x27;re evolving from answering questions to taking autonomous action—AI that doesn&#x27;t just guide but executes, doesn&#x27;t just react but anticipates. 
+This session will showcase live orchestration flows, reveal our architectural principles, and share lessons from deploying production AI that genuinely augments human capability at scale."
+          data-linkedin="https://www.linkedin.com/in/ga%C3%ABtan-beaurep%C3%A8re-39398140/|https://www.linkedin.com/in/alexandre-pineau-47a336a8/">
+          <div class="s-top"><span class="s-flag">🇺🇸</span></div>
+          <div class="s-title">Customer Service AI Ecosystem: Orchestrating Assistants</div>
+          <div class="s-speaker">Gaëtan Beaurepère &amp; Alexandre Pineau · PayFit</div>
+        </div>
+      </td>
+      <td class="td-empty"></td>
+    </tr>
+
+    <!-- 17:00 -->
+    <tr>
+      <td class="td-time">17:00</td>
+      <td>
+        <div class="session cat-ronde" onclick="openModal(this)"
+          data-title="Talk à confirmer"
+          data-speaker="Hymaia" data-role="" data-co="Hymaia"
+          data-lang="" data-time="17:00" data-room="Salle Adenauer" data-format="Talk" data-cat="ronde"
+          data-desc="LLM apps rarely fail loudly - they fail weirdly. Costs drift, outputs degrade, prompts evolve and prompts evolve reactively rather than by design, and it becomes hard to understand what&#x27;s really happening in production. This talk we&#x27;ll cover the essential practices for keeping LLM systems reliable: end-to-end monitoring, cost and latency visibility, prompt versioning, offline and online evaluations, A/B testing, and safeguarding user data. We&#x27;ll compare the major tooling options available today and show how each one helps you measure, debug, and improve an AI product throughout its lifecycle - before small issues turn into expensive surprises.">
+          <div class="s-top"><span class="s-type">À confirmer</span></div>
+          <div class="s-title">Talk à confirmer</div>
+          <div class="s-speaker">Hymaia</div>
+        </div>
+      </td>
+      <td>
+        <div class="session cat-pm" onclick="openModal(this)"
+          data-title="Powered by AI, driven by Content : comment le contenu façonne les nouvelles product surfaces"
+          data-speaker="Hugo Mourlevat &amp; Gwendoline Mazet" data-role="Chief Design &amp; Content Officer &amp; Head of Content" data-co="Michelin"
+          data-lang="fr" data-time="17:00" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="pm"
+          data-desc="La plupart des équipes construisent aujourd&#x27;hui des AI agents, mais beaucoup oublient que le contenu reste le moteur de ces expériences, qu&#x27;il soit visible (chatbots) ou agisse dans l&#x27;ombre pour la personnalisation. L&#x27;enjeu pour Michelin ? Faire émerger sa voix sur ces nouvelles product surfaces de manière authentique et reflétant la puissance de notre marque.
+Ce talk montre comment aborder cette transformation sous l&#x27;angle du Content Engineering. Gwendoline (Head of Content) et Hugo Mourlevat (Chief Design &amp; Content Officer) expliqueront comment des contenus structurés et des guidelines claires nourrissent les agents IA tout en restant fondamentalement adressés aux humains.
+À travers des cas concrets, refonte du site B2C, lancement d&#x27;expériences conversationnelles et évolution des process des équipes marketing, découvrez comment positionner une approche &quot;Powered by AI&quot; centrée sur la transparence et la valeur apportée à l&#x27;utilisateur final."
+          data-linkedin="https://www.linkedin.com/in/hugomrvt/|https://www.linkedin.com/in/gwendoline-mazet/">
+          <div class="s-top"><span class="s-flag">🇫🇷</span></div>
+          <div class="s-title">Powered by AI, driven by Content : comment le contenu façonne les nouvelles product surfaces</div>
+          <div class="s-speaker">Hugo Mourlevat &amp; Gwendoline Mazet · Michelin</div>
+        </div>
+      </td>
+      <td class="td-empty"></td>
+    </tr>
+
+    <!-- 17:30 Ending Keynote -->
+    <tr>
+      <td class="td-time">17:30</td>
+      <td colspan="3" class="td-plenary">
+        <div class="plenary cat-keynote">
+          <span class="plenary-label">Keynote de clôture</span>
+          <span class="plenary-sep">·</span>
+          <div>
+            <div class="plenary-title">Ending Keynote</div>
+            <div class="plenary-speaker">Lucas Cerdan &amp; Tanguy Verluise</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 18:00 Closing -->
+    <tr>
+      <td class="td-time">18:00</td>
+      <td colspan="3" class="td-plenary">
+        <div class="plenary cat-break">
+          <span class="plenary-sep">🥂</span>
+          <div><div class="plenary-title">Closing Words &amp; Cocktail</div></div>
+        </div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+<footer>
+  AI Product Day 2026 &nbsp;·&nbsp; <a href="https://www.ai-product-day.com" target="_blank">ai-product-day.com</a>
+</footer>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-stripe" id="modal-stripe"></div>
+    <div class="modal-topbar">
+      <div style="width:30px"></div>
+      <div class="modal-handle"></div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-badges" id="modal-badges"></div>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <p class="modal-desc" id="modal-desc"></p>
+      <div class="modal-speaker-block" id="modal-speaker-block">
+        <div class="modal-avatar" id="modal-avatar"></div>
+        <div>
+          <div class="modal-speaker-name" id="modal-speaker-name"></div>
+          <div class="modal-speaker-role" id="modal-speaker-role"></div>
+        </div>
+      </div>
+      <div class="modal-meta" id="modal-meta"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ── INJECT TIME ON CARDS ── */
+  function addMinutes(timeStr, mins) {
+    const [h, m] = timeStr.split(':').map(Number);
+    const total = h * 60 + m + mins;
+    return `${Math.floor(total / 60)}:${String(total % 60).padStart(2, '0')}`;
+  }
+  function parseDuration(format) {
+    const match = format && format.match(/(\d+)\s*min/);
+    if (match) return parseInt(match[1]);
+    if (format && /atelier/i.test(format)) return 60;
+    if (format && /table ronde/i.test(format)) return 60;
+    return 25; // default long talk
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Inject start–end times on cards
+    document.querySelectorAll('.session[data-time], .session-lightning[data-time]').forEach(el => {
+      const start = el.dataset.time;
+      if (!start) return;
+      const end = addMinutes(start, parseDuration(el.dataset.format));
+      const span = Object.assign(document.createElement('span'), {
+        className: 's-time',
+        textContent: `${start} – ${end}`
+      });
+      const target = el.querySelector('.s-top') || el.querySelector('.sl-flag-title');
+      if (target) target.appendChild(span);
+    });
+
+    // Equalise lightning talk card heights AFTER layout is computed
+    requestAnimationFrame(() => {
+      const cards = Array.from(document.querySelectorAll('.session-lightning'));
+      if (!cards.length) return;
+      cards.forEach(c => c.style.minHeight = '');          // reset
+      const maxH = Math.max(...cards.map(c => c.offsetHeight));
+      cards.forEach(c => c.style.minHeight = maxH + 'px');
+    });
+  });
+
+  /* ── FILTER ── */
+  let activeFilter = null;
+
+  function toggleFilter(cat, btn) {
+    activeFilter = (activeFilter === cat) ? null : cat;
+
+    // Update filter buttons
+    document.querySelectorAll('.legend-item').forEach(el => {
+      el.classList.remove('active', 'inactive');
+      if (activeFilter) {
+        el.dataset.filter === activeFilter ? el.classList.add('active') : el.classList.add('inactive');
+      }
+    });
+
+    // Dim / undim all sessions and lightning cards
+    document.querySelectorAll('.session, .session-lightning').forEach(el => {
+      if (!activeFilter || el.dataset.cat === activeFilter) {
+        el.classList.remove('dimmed');
+      } else {
+        el.classList.add('dimmed');
+      }
+    });
+  }
+
+  /* ── MODAL ── */
+  const CAT = {
+    product:  { label:'AI In Product',         color:'#ddff00', bg:'rgba(221,255,0,.12)',   border:'rgba(221,255,0,.4)'   },
+    pm:       { label:'AI for PMs & Designers', color:'#2bfdac', bg:'rgba(43,253,172,.12)',  border:'rgba(43,253,172,.4)'  },
+    scaling:  { label:'Scaling AI Adoption',    color:'#a5a6fe', bg:'rgba(38,36,251,.18)',   border:'rgba(38,36,251,.6)'   },
+    keynote:  { label:'Keynote',                color:'#fc1258', bg:'rgba(252,18,88,.12)',   border:'rgba(252,18,88,.4)'   },
+    workshop: { label:'Workshop / Atelier',     color:'#fc1258', bg:'rgba(252,18,88,.12)',   border:'rgba(252,18,88,.35)'  },
+    ronde:    { label:'Table Ronde',            color:'#2bfdac', bg:'rgba(43,253,172,.12)',  border:'rgba(43,253,172,.4)'  },
+  };
+
+  function initials(name) {
+    return name.split(/[\s&,]+/).filter(Boolean).slice(0,2).map(w => w[0].toUpperCase()).join('');
+  }
+
+  function badge(text, color, bg, border) {
+    return `<span class="modal-badge" style="color:${color};background:${bg};border-color:${border}">${text}</span>`;
+  }
+
+  function openModal(el) {
+    const d = el.dataset;
+    const cat = CAT[d.cat] || {};
+    const overlay = document.getElementById('modal-overlay');
+
+    // Stripe + modal border/glow coloured by category
+    const modalEl = document.getElementById('modal');
+    document.getElementById('modal-stripe').style.background = cat.color || '#888';
+    modalEl.style.borderColor  = cat.border || 'rgba(255,255,255,.12)';
+    modalEl.style.boxShadow    = `0 0 48px ${cat.bg || 'transparent'}, 0 24px 64px rgba(0,0,0,.6)`;
+
+    // Badges
+    let badges = '';
+    if (cat.label) badges += badge(cat.label, cat.color, cat.bg, cat.border);
+    if (d.format)  badges += badge(d.format, cat.color || '#888', 'rgba(255,255,255,.06)', 'rgba(255,255,255,.12)');
+    if (d.lang === 'fr') badges += badge('🇫🇷 Français', '#fb923c', 'rgba(249,115,22,.1)', 'rgba(249,115,22,.3)');
+    if (d.lang === 'en') badges += badge('🇺🇸 English',  '#67e8f9', 'rgba(6,182,212,.1)',  'rgba(6,182,212,.3)');
+    document.getElementById('modal-badges').innerHTML = badges;
+
+    // Title & desc
+    document.getElementById('modal-title').textContent = d.title || '';
+    const descEl = document.getElementById('modal-desc');
+    descEl.textContent = d.desc || '';
+    descEl.style.display = d.desc ? 'block' : 'none';
+
+    // Speaker
+    const spBlock = document.getElementById('modal-speaker-block');
+    if (d.speaker) {
+      document.getElementById('modal-avatar').textContent = initials(d.speaker);
+      document.getElementById('modal-avatar').style.background =
+        `linear-gradient(135deg, ${cat.color || '#888'}, ${cat.border || '#444'})`;
+      // Speaker name — link to LinkedIn if available
+    const speakerNames = d.speaker.split(/\s*(?:&amp;|&)\s*/);
+    const linkedins    = (d.linkedin || '').split('|');
+    const nameHtml = speakerNames.map((name, i) => {
+      const url = linkedins[i] && linkedins[i].trim();
+      return url
+        ? `<a href="${url}" target="_blank" rel="noopener">${name.trim()}</a>`
+        : name.trim();
+    }).join(' &amp; ');
+    document.getElementById('modal-speaker-name').innerHTML = nameHtml;
+      document.getElementById('modal-speaker-role').textContent =
+        [d.role, d.co].filter(Boolean).join(' · ');
+      spBlock.style.display = 'flex';
+    } else {
+      spBlock.style.display = 'none';
+    }
+
+    // Meta
+    let meta = '';
+    if (d.time) meta += `<span class="modal-meta-item">🕐 ${d.time}</span>`;
+    if (d.room) meta += `<span class="modal-meta-item">📍 ${d.room}</span>`;
+    document.getElementById('modal-meta').innerHTML = meta;
+
+    // Close button tint
+    const closeBtn = modalEl.querySelector('.modal-close');
+    if (closeBtn) {
+      closeBtn.style.borderColor = cat.border || 'rgba(255,255,255,.12)';
+      closeBtn.style.color = cat.color || 'var(--muted)';
+    }
+
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('modal-overlay')) closeModal();
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>

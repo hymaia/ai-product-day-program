@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip3 install openpyxl -q)",
+      "Bash(python3 -:*)",
+      "WebFetch(domain:www.ai-product-day.com)"
+    ]
+  }
+}
