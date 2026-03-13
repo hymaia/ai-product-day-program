@@ -88,15 +88,14 @@
     .tr-break .plenary { justify-content:center; }
     .tr-break .td-time { color:var(--dim); }
 
-    /* Session TD cells: equal height within a row */
+    /* Session TD cells: top-aligned, no padding — table row equalises heights natively */
     .schedule tbody td:not(.td-time):not(.td-plenary):not(.td-empty) {
       vertical-align: top;
-      height: 1px;   /* trick: allows height:100% on .session child */
       padding: 0;
     }
 
     /* SESSION CARD */
-    .session { border-radius:10px; padding:12px 14px; border:1px solid; height:100%;
+    .session { border-radius:10px; padding:12px 14px; border:1px solid;
       display:flex; flex-direction:column; gap:6px; cursor:pointer;
       transition:filter .15s, transform .15s, box-shadow .15s; }
     .session:hover { filter:brightness(1.12); transform:translateY(-2px); box-shadow:0 6px 24px rgba(0,0,0,.4); }
