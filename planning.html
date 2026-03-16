@@ -72,8 +72,8 @@
     .th-time { width:58px; min-width:58px; }
     .th-room { padding:10px 14px; background:var(--surface-2); border:1px solid var(--border);
       border-radius:10px; text-align:left; vertical-align:middle; }
-    .room-name { font-size:13px; font-weight:700; color:var(--text); }
-    .room-cap  { font-size:11px; color:var(--dim); margin-top:2px; }
+    .room-name { font-size:17px; font-weight:700; color:var(--text); }
+    .room-cap  { font-size:12px; color:var(--dim); margin-top:3px; }
     .td-time { font-size:12px; font-weight:700; color:var(--dim); text-align:right;
       padding-right:8px; vertical-align:top; padding-top:14px; white-space:nowrap; }
     .td-time.highlight { color:var(--muted); }
@@ -137,6 +137,8 @@
     .cat-pm       { background:var(--pm-bg);       border-color:var(--pm-border);       color:var(--pm-color); }
     .cat-scaling  { background:var(--scaling-bg);  border-color:var(--scaling-border);  color:var(--scaling-color); }
     .cat-keynote  { background:var(--keynote-bg);  border-color:var(--keynote-border);  color:var(--keynote-color); }
+    .plenary.cat-keynote .plenary-title,
+    .plenary.cat-keynote .plenary-speaker { color:#ffffff; }
     .cat-workshop { background:var(--workshop-bg); border-color:var(--workshop-border); color:var(--workshop-color); }
     .cat-ronde    { background:var(--ronde-bg);    border-color:var(--ronde-border);    color:var(--ronde-color); }
     .cat-break    { background:var(--break-bg);    border-color:var(--break-border);    color:var(--break-color); }
@@ -374,10 +376,10 @@ In this keynote, Dounia Zouine explores how AI is reshaping brand and product pe
         </div>
       </td>
       <td>
-        <div class="session cat-scaling" onclick="openModal(this)"
+        <div class="session cat-pm" onclick="openModal(this)"
           data-title="The Product Ops playbook to scale product feedback with AI"
           data-speaker="Estelle David" data-role="Senior Product Operations Manager" data-co="Gorgias"
-          data-lang="fr" data-time="10:30" data-room="Gulbenkian" data-format="Long Talk · 25 min" data-cat="scaling"
+          data-lang="fr" data-time="10:30" data-room="Gulbenkian" data-format="Long Talk · 25 min" data-cat="pm"
           data-desc="Feedback isn&#x27;t a tooling problem—it&#x27;s a culture problem. In this talk, I&#x27;ll share a culture-first Product Ops approach to make feedback truly actionable: what teams do (and don&#x27;t do) to turn raw input into clarity, alignment, and momentum across Product and GTM. Lessons from what I built at Contentsquare, and how we&#x27;re now scaling it at Gorgias with AI (tagging, clustering, summaries, retrieval). I&#x27;m genuinely passionate about this—no magic recipe, just concrete practices you can pick up, adapt, and make your own."
           data-linkedin="https://www.linkedin.com/in/estelle-david/">
           <div class="s-top"><span class="s-flag">🇫🇷</span></div>
@@ -430,9 +432,9 @@ In this talk, Alice Mouton shares a practical framework for designing agents tha
         <div class="session cat-pm" onclick="openModal(this)"
           data-title="Claude Code for PMs : Vis ma vie de PM Agentique"
           data-speaker="Laurène Thenoz" data-role="Head of Product &amp; Transformation" data-co="Hymaia"
-          data-lang="fr" data-time="11:30" data-room="Gulbenkian" data-format="Atelier · 55 min" data-cat="workshop"
+          data-lang="fr" data-time="11:30" data-room="Gulbenkian" data-format="Atelier · 55 min" data-cat="pm"
           data-desc=""
-          data-linkedin="">
+          data-linkedin="https://www.linkedin.com/in/lvol1/">
           <div class="s-top"><span class="s-flag">🇫🇷</span><span class="s-type">Atelier</span></div>
           <div class="s-title">Claude Code for PMs : Vis ma vie de PM Agentique</div>
           <div class="s-speaker">Laurène Thenoz · Hymaia</div>
@@ -474,10 +476,10 @@ Here&#x27;s what nobody tells you: organizations don&#x27;t adopt AI, they evolv
     <tr>
       <td class="td-time">12:30</td>
       <td>
-        <div class="session cat-product" onclick="openModal(this)"
+        <div class="session cat-pm" onclick="openModal(this)"
           data-title="Unifying AI design to accelerate feature delivery"
-          data-speaker="Alice Bel, Ana Perlstein, Anne-Sophie Guillou &amp; Camille Lannel-Lamotte" data-role="Senior Product Designer, Content Designer, Principal UX Researcher &amp; Design System Designer" data-co="Criteo"
-          data-lang="en" data-time="12:30" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="product"
+          data-speaker="Alice Bel &amp; Ana Perlstein &amp; Anne-Sophie Guillou &amp; Camille Lannel-Lamotte" data-role="Senior Product Designer, Content Designer, Principal UX Researcher &amp; Design System Designer" data-co="Criteo"
+          data-lang="en" data-time="12:30" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="pm"
           data-desc="AI has changed product building far more than it has changed engineering. A single founder can now design, prototype, validate, ship, and iterate at a pace that used to require full teams. This talk explores how Criteo unified its AI design practice to accelerate feature delivery — from shared design systems to cross-functional AI workflows."
           data-linkedin="https://www.linkedin.com/in/alice-bel/|https://www.linkedin.com/in/ana-perlstein-65481b114/|https://www.linkedin.com/in/annesophieguillou/|https://www.linkedin.com/in/camillelannel-lamotte/">
           <div class="s-top"><span class="s-flag">🇺🇸</span></div>
@@ -502,8 +504,8 @@ This shift changes how products are built, from static specifications to continu
       <td>
         <div class="session cat-pm" onclick="openModal(this)"
           data-title="Ce que l&#x27;IA change (déjà) dans le recrutement produit"
-          data-speaker="Rémi Guyot, Marion Darnet &amp; Paul-Etienne Bauchet" data-role="Founder, Co-CEO &amp; Responsable Recrutement" data-co="AI Discipline, Pachamama &amp; leboncoin"
-          data-lang="fr" data-time="12:30" data-room="Gulbenkian" data-format="Table Ronde · 25 min" data-cat="ronde"
+          data-speaker="Rémi Guyot &amp; Marion Darnet &amp; Paul-Etienne Bauchet" data-role="Founder, Co-CEO &amp; Responsable Recrutement" data-co="AI Discipline, Pachamama &amp; leboncoin"
+          data-lang="fr" data-time="12:30" data-room="Gulbenkian" data-format="Table Ronde · 25 min" data-cat="pm"
           data-desc="En quoi l&#x27;IA rebat les cartes du marché de l&#x27;emploi ? Quel est l&#x27;impact de l&#x27;IA sur la taille des organisations produit ? Le rôle de PM va-t-il être remplacé par le rôle de Product Builder ? Comment les recruteurs adaptent-ils leurs critères ? Une table ronde pour décrypter les transformations déjà en cours."
           data-linkedin="https://www.linkedin.com/in/remiguyot/|https://www.linkedin.com/in/mariondarnet/|https://www.linkedin.com/in/paul-etienne-bauchet-13749346/">
           <div class="s-top"><span class="s-flag">🇫🇷</span><span class="s-type">Table Ronde</span></div>
@@ -613,15 +615,15 @@ This shift changes how products are built, from static specifications to continu
         </div>
       </td>
       <td>
-        <div class="session cat-pm" onclick="openModal(this)"
+        <div class="session cat-product" onclick="openModal(this)"
           data-title="Quand l&#x27;IA devient le cœur du produit : nouveaux cycles, nouveaux rôles, nouveaux risques"
-          data-speaker="Thomas Moulin, Emmanuelle Galou, Céline Haentzler &amp; Elsa Margier" data-role="Lead Data Science &amp; AI, Data &amp; AI Leader, Generative AI Product Expert &amp; AI Product Builder" data-co="Welcome To The Jungle, Obat, Betclic &amp; Hymaia"
-          data-lang="fr" data-time="14:00" data-room="Gulbenkian" data-format="Table Ronde · 25 min" data-cat="ronde"
+          data-speaker="Thomas Moulin &amp; Emmanuelle Galou &amp; Céline Haentzler &amp; Elsa Margier" data-role="Lead Data Science &amp; AI, Data &amp; AI Leader, Generative AI Product Expert &amp; AI Product Builder" data-co="Welcome To The Jungle, Obat, Betclic &amp; Hymaia"
+          data-lang="fr" data-time="14:00" data-room="Gulbenkian" data-format="Table Ronde · 25 min" data-cat="product"
           data-desc="Quand l&#x27;IA devient centrale dans le produit, les règles du jeu changent. Cycle de vie plus rapide, évaluation plus complexe, nouveaux rôles, nouveaux risques : les repères traditionnels du product management ne suffisent plus. Cette table ronde réunit des praticiens qui vivent cette transformation de l&#x27;intérieur."
-          data-linkedin="https://www.linkedin.com/in/thomas-moulin-a47b0183/|https://www.linkedin.com/in/emmanuellegalou/|https://www.linkedin.com/in/celinehaentzler/|">
+          data-linkedin="https://www.linkedin.com/in/thomas-moulin-a47b0183/|https://www.linkedin.com/in/emmanuellegalou/|https://www.linkedin.com/in/celinehaentzler/|https://www.linkedin.com/in/elsa-margier/">
           <div class="s-top"><span class="s-flag">🇫🇷</span><span class="s-type">Table Ronde</span></div>
           <div class="s-title">Quand l'IA devient le cœur du produit : nouveaux cycles, nouveaux rôles, nouveaux risques</div>
-          <div class="s-speaker">Thomas Moulin, Emmanuelle Galou, Céline Haentzler &amp; Elsa Margier</div>
+          <div class="s-speaker">T. Moulin, E. Galou, C. Haentzler &amp; E. Margier</div>
         </div>
       </td>
     </tr>
@@ -656,8 +658,8 @@ This shift changes how products are built, from static specifications to continu
       <td rowspan="2" class="td-span">
         <div class="session cat-pm" onclick="openModal(this)"
           data-title="Développer ses idées grâce à ses insights : co-construire avec Lovable"
-          data-speaker="Marion Jachimski, Julie Robles &amp; Nicola Carli" data-role="Senior Product Manager, Product &amp; AI Operations Lead &amp; Senior AI Ops" data-co="Seqino, Payfit &amp; Payfit"
-          data-lang="fr" data-time="14:30" data-room="Gulbenkian" data-format="Atelier · 55 min" data-cat="workshop"
+          data-speaker="Marion Jachimski &amp; Julie Robles &amp; Nicola Carli" data-role="Senior Product Manager, Product &amp; AI Operations Lead &amp; Senior AI Ops" data-co="Seqino, Payfit &amp; Payfit"
+          data-lang="fr" data-time="14:30" data-room="Gulbenkian" data-format="Atelier · 55 min" data-cat="pm"
           data-desc="Comment transformer des feedbacks utilisateurs en prototype grâce à l&#x27;IA ? Dans cet atelier hands-on, vous utiliserez un LLM pour catégoriser des verbatims, identifier des pains clés et challenger les solutions, avant de co-construire un prototype avec Lovable."
           data-linkedin="https://www.linkedin.com/in/marion-jachimski-7010996b/|https://www.linkedin.com/in/roblesjulie/|https://www.linkedin.com/in/nicola-carli/">
           <div class="s-top"><span class="s-flag">🇫🇷</span><span class="s-type">Atelier</span></div>
@@ -733,18 +735,7 @@ This shift changes how products are built, from static specifications to continu
           <div class="s-speaker">Gaëtan Beaurepère &amp; Alexandre Pineau · Payfit</div>
         </div>
       </td>
-      <td rowspan="2" class="td-span">
-        <div class="session cat-workshop" onclick="openModal(this)"
-          data-title="Atelier Exclusif CPO"
-          data-speaker="François Laurain &amp; Rémi Guyot" data-role="CEO &amp; Founder" data-co="Hymaia &amp; AI Discipline"
-          data-lang="fr" data-time="16:00" data-room="Gulbenkian" data-format="Atelier · 55 min" data-cat="workshop"
-          data-desc=""
-          data-linkedin="">
-          <div class="s-top"><span class="s-flag">🇫🇷</span><span class="s-type">Atelier CPO</span></div>
-          <div class="s-title">Atelier Exclusif CPO</div>
-          <div class="s-speaker">François Laurain &amp; Rémi Guyot · Hymaia</div>
-        </div>
-      </td>
+      <td class="td-empty"></td>
     </tr>
 
     <!-- 16:30 -->
@@ -774,16 +765,17 @@ This shift changes how products are built, from static specifications to continu
           <div class="s-speaker">Terry Michel · Just A Click</div>
         </div>
       </td>
+      <td class="td-empty"></td>
     </tr>
 
     <!-- 17:00 -->
     <tr>
       <td class="td-time">17:00</td>
       <td>
-        <div class="session cat-product" onclick="openModal(this)"
+        <div class="session cat-scaling" onclick="openModal(this)"
           data-title="Claude Code au-delà du code : construire les bases d&#x27;une Agentic Company"
           data-speaker="Yoann Benoit &amp; Julie Prieur" data-role="Co-Founder &amp; CPO" data-co="Hymaia &amp; Poppins"
-          data-lang="en" data-time="17:00" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="product"
+          data-lang="en" data-time="17:00" data-room="Salle Adenauer" data-format="Long Talk · 25 min" data-cat="scaling"
           data-desc="LLM apps rarely fail loudly — they fail weirdly. Costs drift, outputs degrade, prompts evolve reactively rather than by design, and it becomes hard to understand what&#x27;s really happening. In this talk, we share how Claude Code can be a catalyst not just for coding, but for building the foundations of an Agentic Company."
           data-linkedin="https://www.linkedin.com/in/yoann-benoit/|https://www.linkedin.com/in/julieprieur/">
           <div class="s-top"><span class="s-flag">🇺🇸</span></div>
@@ -792,10 +784,10 @@ This shift changes how products are built, from static specifications to continu
         </div>
       </td>
       <td>
-        <div class="session cat-product" onclick="openModal(this)"
+        <div class="session cat-pm" onclick="openModal(this)"
           data-title="Powered by AI, driven by Content : comment le contenu façonne les nouvelles product surfaces"
           data-speaker="Hugo Mourlevat &amp; Gwendoline Mazet" data-role="Chief Design &amp; Content Officer &amp; Head of Content" data-co="Michelin"
-          data-lang="fr" data-time="17:00" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="product"
+          data-lang="fr" data-time="17:00" data-room="Salon Honorat" data-format="Long Talk · 25 min" data-cat="pm"
           data-desc="La plupart des équipes construisent aujourd&#x27;hui des AI agents, mais beaucoup oublient que le contenu reste le moteur de ces expériences, qu&#x27;il soit visible (chatbots) ou agisse dans l&#x27;ombre pour la pertinence des réponses. Comment le contenu façonne-t-il les nouvelles product surfaces à l&#x27;ère de l&#x27;IA ?"
           data-linkedin="https://www.linkedin.com/in/hugomrvt/|https://www.linkedin.com/in/gwendoline-mazet/">
           <div class="s-top"><span class="s-flag">🇫🇷</span></div>
@@ -815,7 +807,7 @@ This shift changes how products are built, from static specifications to continu
           data-speaker="Lucas Cerdan &amp; Tanguy Verluise" data-role="Principal Product Manager &amp; —" data-co="Samsara"
           data-lang="fr" data-time="17:30" data-room="Salle Adenauer" data-format="Keynote · 20 min" data-cat="keynote"
           data-desc=""
-          data-linkedin="">
+          data-linkedin="https://www.linkedin.com/in/lucascerdan/|https://www.linkedin.com/in/tanguyverluise/">
           <span class="plenary-label">Keynote de clôture</span>
           <span class="plenary-sep">·</span>
           <div>
