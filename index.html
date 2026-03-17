@@ -78,8 +78,8 @@
       padding-right:8px; vertical-align:top; padding-top:14px; white-space:nowrap; }
     .td-time.highlight { color:var(--muted); }
     .td-empty { background:rgba(255,255,255,.02); border:1px dashed rgba(255,255,255,.06); border-radius:10px; min-height:60px; }
-    .td-span { height:1px; padding:0; vertical-align:top; }
-    .td-span > .session { height:100%; box-sizing:border-box; }
+    .td-span { padding:0; vertical-align:top; }
+    .td-span > .session { box-sizing:border-box; }
     .td-plenary { padding:0; }
     .plenary { border-radius:10px; padding:12px 22px; display:flex; align-items:center; gap:14px; border:1px solid; min-height:52px; }
     .plenary-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; opacity:.7; }
@@ -904,6 +904,15 @@ This shift changes how products are built, from static specifications to continu
       allSessions.forEach(s => { s.style.minHeight = ''; s.style.height = ''; });
       const globalMax = Math.max(...allSessions.map(s => s.offsetHeight));
       allSessions.forEach(s => { s.style.height = globalMax + 'px'; });
+
+      // Fill rowspan workshop cells (cross-browser, no height:1px hack)
+      document.querySelectorAll('.td-span').forEach(td => {
+        const session = td.querySelector('.session');
+        if (!session) return;
+        session.style.height = '';
+        const tdH = td.getBoundingClientRect().height;
+        if (tdH > 0) session.style.height = tdH + 'px';
+      });
     });
   });
 
